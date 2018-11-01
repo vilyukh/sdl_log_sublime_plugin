@@ -1,0 +1,10 @@
+{
+    "color_scheme": "Packages/SdlLogs/SdlLogs.sublime-color-scheme",
+    "syntax": "Packages/SdlLogs/SdlLogs.sublime-syntax",
+    "extensions": [
+        "log",
+        "logfile"
+    ],
+    "source_path": ""
+}
+
