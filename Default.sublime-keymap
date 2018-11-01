@@ -1,0 +1,8 @@
+[
+    { "keys": [ "ctrl+shift+y" ], "command": "hide_date" },
+    { "keys": [ "ctrl+shift+t" ], "command": "hide_thread_adress" },
+    { "keys": [ "ctrl+shift+l" ], "command": "hide_extra_path" },
+    { "keys": [ "ctrl+shift+k" ], "command": "hide_component" },
+    { "keys": [ "ctrl+shift+p" ], "command": "filter_by_value" },
+    { "keys": [ "ctrl+shift+j" ], "command": "function_call" }
+]

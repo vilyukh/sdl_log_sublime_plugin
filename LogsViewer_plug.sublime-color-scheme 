@@ -1,0 +1,123 @@
+{
+    "variables": {
+        // Define variables here
+    },
+    "globals": {
+            "background":     "#22282A", 
+            "caret":      "#AEAFAD", 
+            "foreground":     "#F1F2F3", 
+            "invisibles":     "#4B4E55", 
+            "selection":  "#4F6164"
+    },
+    "rules": [
+    // for PARAM
+        {
+            "name" : "Log4cxx PARAM",
+            "scope": "param.date_time.log4cxx",
+            "foreground": "#7a4600", 
+            "font_style": "italic",
+        },
+        {
+            "name" : "Log4cxx PARAM",
+            "scope": "param.id.log4cxx",
+            "foreground": "#96c694", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx PARAM",
+            "scope": "param.component.log4cxx",
+            "foreground": "#d61e60", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx PARAM",
+            "scope": "param.path.log4cxx",
+            "foreground": "#ffbb0a", 
+            "font_style": "italic",
+        },
+        {
+            "name" : "Log4cxx PARAM",
+            "scope": "param.line.log4cxx",
+            "foreground": "#02b6f7", 
+            "font_style": "italic",
+        },
+    // for TRACE
+        {
+        "name" : "Log4cxx TRACE",
+        "scope": "trace.log4cxx",
+        "foreground": "", 
+        "font_style": "",
+        },
+        {
+            "name" : "Log4cxx TRACE message",
+            "scope": "trace.message.log4cxx",
+            "foreground": "", 
+            "font_style": "",
+        },
+    // for INFO
+    {
+        "name" : "Log4cxx INFO",
+        "scope": "info.log4cxx",
+        "foreground": "#00FF00", 
+        "font_style": "",
+        },
+        {
+            "name" : "Log4cxx INFO message",
+            "scope": "info.message.log4cxx",
+            "foreground": "#339900", 
+            "font_style": "",
+        },
+    // for DEBUG
+        {
+            "name" : "Log4cxx DEBUG",
+            "scope": "debug.log4cxx",
+            "foreground": "#FF9900", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx DEBUG message",
+            "scope": "debug.message.log4cxx",
+            "foreground": "#996600", 
+            "font_style": "",
+        },
+    // for WARN
+        {
+            "name" : "Log4cxx WARN",
+            "scope": "warn.log4cxx",
+            "foreground": "#FFFF00", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx WARN message",
+            "scope": "warn.message.log4cxx",
+            "foreground": "#FFCC00", 
+            "font_style": "",
+        },
+    // for ERROR
+        {
+            "name" : "Log4cxx ERROR",
+            "scope": "error.log4cxx",
+            "foreground": "#FF0000", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx ERROR message",
+            "scope": "error.message.log4cxx",
+            "foreground": "#CC0000", 
+            "font_style": "",
+        },
+    // for FATAL
+        {
+            "name" : "Log4cxx FATAL",
+            "scope": "fatal.log4cxx",
+            "foreground": "#FF00FF", 
+            "font_style": "",
+        },
+        {
+            "name" : "Log4cxx FATAL message",
+            "scope": "fatal.message.log4cxx",
+            "foreground": "#CC66FF", 
+            "font_style": "",
+        },
+    ]
+}

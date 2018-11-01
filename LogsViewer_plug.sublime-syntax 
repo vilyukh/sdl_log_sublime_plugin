@@ -1,0 +1,83 @@
+%YAML 1.2
+---
+# http://www.sublimetext.com/docs/3/syntax.html
+name: Log4cxx
+file_extensions:
+  - log
+  - logfile
+scope: text.log4cxx
+variables:
+  date_time: '\[{1}\d{1,2} \w{1,3} \d{1,} \d{1,2}:\d{1,2}:\d{1,2},\d{1,}\]{1} *'
+  id: '\[0x.{2,12}\] *'
+  component: '\[[A-z]+\]'
+  path: ' +\/.*(cc|cpp|h|hpp)'
+  line: '\d* *'
+  message: '.*'
+contexts:
+  main:
+    - match: '^(TRACE *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: trace.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: trace.message.log4cxx
+    - match: '^(INFO *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: info.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: info.message.log4cxx
+    - match: '^(DEBUG *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: debug.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: debug.message.log4cxx
+    - match: '^(WARN *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: warn.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: warn.message.log4cxx
+    - match: '^(ERROR *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: error.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: error.message.log4cxx
+    - match: '^(FATAL *)({{date_time}})*({{id}})*({{component}})*({{path}}:)*({{line}})({{message}})$'
+      scope: string.quoted.log4cxx
+      captures:
+        1: fatal.log4cxx
+        2: param.date_time.log4cxx
+        3: param.id.log4cxx
+        4: param.component.log4cxx
+        5: param.path.log4cxx
+        6: param.ext.log4cxx
+        7: param.line.log4cxx
+        8: fatal.message.log4cxx
