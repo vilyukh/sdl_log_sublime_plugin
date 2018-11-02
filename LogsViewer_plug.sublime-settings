@@ -1,0 +1,9 @@
+{
+    "color_scheme": "Packages/Log4cxx/Log4cxx.sublime-color-scheme",
+    "syntax": "Packages/Log4cxx/Log4cxx.sublime-syntax",
+    "extensions": [
+        "log",
+        "logfile"
+    ]
+}
+
