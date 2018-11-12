@@ -1,22 +1,27 @@
 # sdl_sublime_log_plugin
-Sublime Text plugin  for handy work with SDL logs.
+Sublime Text plugin  for handy work with SdlLogs.
 
-##Requirements
-This plugin requires at least Sublime Text 3 v.3176 or higher for best perfomance and correct syntax
+## Requirements
+This plugin requires at least Sublime Text 3 v.3176 or higher for best performance and correct syntax
 
 ## Installing
-Move all files to Sublime Packages folder
+- Move directory "SdlLogs" to Sublime Packages folder.
 (Generally at /home/*USER*/.config/sublime-text-3/Packages)
-(Creating folder for plugin in Pacckages is good practise, you can choose any name for it)
+- Change syntax in Sublime to SdlLogs.
+(View -> Syntax ->SdlLogs)
 
-Change syntax in Sublime to SDL Logs
-(View -> Syntax ->SDL Logs)
+## Dependencies
+- Should install package for yaml
+(Enter in terminal 'sudo apt-get install python-yaml')
 
 ## Functionality
-This plugin implements color scheme and simple commands to work with SDL logs
+This plugin implements color scheme and simple commands to work with SdlLogs
 - Indicates methods and make them clickable (Opens file containing that method and highlight him)
 - Search for common syntax patterns and highlight them (color scheme)
 - Implements commands for filtering columns&strings, finding not closed functions
 
 ## Configuration
-Command keybings configured in Default.sublime-keymap file
+Open Sublime in top panel choose preferences->Package->Settings->SdlLogs:
+- Item "Color Scheme" contain configuration for text color.
+- Item "Setting" contain all path to configure files and path to your sources if logs exists incorrect absolute path to file.
+- Item "Key Bindings" contain all keybindings configuration.

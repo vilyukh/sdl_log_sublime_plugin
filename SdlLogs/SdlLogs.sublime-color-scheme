@@ -1,0 +1,137 @@
+{
+    "variables": {
+        // Define variables here
+    },
+    "globals": {
+        "background": "#22282A",
+        "caret": "#AEAFAD",
+        "foreground": "#F1F2F3",
+        "invisibles": "#4B4E55",
+        "selection": "#4F6164"
+    },
+    "rules": [
+        // for FUNC CALL
+        {
+            "name": "SDL_Logs FUNC CALL",
+            "scope": "param.func_call.SDL_Logs",
+            "foreground": "red",
+            "font_style": "bold",
+        },
+        // for FUNC TREE
+        {
+            "name": "SDL_Logs FUNC TREE",
+            "scope": "param.func_tree.SDL_Logs",
+            "foreground": "green",
+            "font_style": "bold",
+        },
+        // for PARAM
+        {
+            "name": "SDL_Logs PARAM",
+            "scope": "param.date_time.SDL_Logs",
+            "foreground": "#7a4600",
+            "font_style": "italic",
+        },
+        {
+            "name": "SDL_Logs PARAM",
+            "scope": "param.id.SDL_Logs",
+            "foreground": "#96c694",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs PARAM",
+            "scope": "param.component.SDL_Logs",
+            "foreground": "#d61e60",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs PARAM",
+            "scope": "param.path.SDL_Logs",
+            "foreground": "#ffbb0a",
+            "font_style": "italic",
+        },
+        {
+            "name": "SDL_Logs PARAM",
+            "scope": "param.line.SDL_Logs",
+            "foreground": "#02b6f7",
+            "font_style": "italic",
+        },
+        // for TRACE
+        {
+            "name": "SDL_Logs TRACE",
+            "scope": "trace.SDL_Logs",
+            "foreground": "",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs TRACE message",
+            "scope": "trace.message.SDL_Logs",
+            "foreground": "",
+            "font_style": "",
+        },
+        // for INFO
+        {
+            "name": "SDL_Logs INFO",
+            "scope": "info.SDL_Logs",
+            "foreground": "#00FF00",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs INFO message",
+            "scope": "info.message.SDL_Logs",
+            "foreground": "#339900",
+            "font_style": "",
+        },
+        // for DEBUG
+        {
+            "name": "SDL_Logs DEBUG",
+            "scope": "debug.SDL_Logs",
+            "foreground": "#FF9900",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs DEBUG message",
+            "scope": "debug.message.SDL_Logs",
+            "foreground": "#996600",
+            "font_style": "",
+        },
+        // for WARN
+        {
+            "name": "SDL_Logs WARN",
+            "scope": "warn.SDL_Logs",
+            "foreground": "#FFFF00",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs WARN message",
+            "scope": "warn.message.SDL_Logs",
+            "foreground": "#FFCC00",
+            "font_style": "",
+        },
+        // for ERROR
+        {
+            "name": "SDL_Logs ERROR",
+            "scope": "error.SDL_Logs",
+            "foreground": "#FF0000",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs ERROR message",
+            "scope": "error.message.SDL_Logs",
+            "foreground": "#CC0000",
+            "font_style": "",
+        },
+        // for FATAL
+        {
+            "name": "SDL_Logs FATAL",
+            "scope": "fatal.SDL_Logs",
+            "foreground": "#FF00FF",
+            "font_style": "",
+        },
+        {
+            "name": "SDL_Logs FATAL message",
+            "scope": "fatal.message.SDL_Logs",
+            "foreground": "#CC66FF",
+            "font_style": "",
+        },
+    ]
+}

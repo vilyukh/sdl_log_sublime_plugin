@@ -1,0 +1,10 @@
+[
+	 { "keys": [ "alt+1" ], "command": "hide_date" },
+    { "keys": [ "alt+2" ], "command": "hide_thread_adress" },
+    { "keys": [ "alt+3" ], "command": "hide_extra_path" },
+    { "keys": [ "alt+4" ], "command": "hide_component" },
+    { "keys": [ "alt+5" ], "command": "filter_by_value" },
+    { "keys": [ "alt+6" ], "command": "function_call" },
+    { "keys": [ "f12" ], "command": "jump_to_file" }
+]
+
