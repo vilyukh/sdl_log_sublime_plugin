@@ -56,8 +56,9 @@ class LogSyntax:
         LINE = "line"
         MESSAGE = "message"
         JUNK = "junk"
-        THREAD_ENTER = "thread_enter"
-        THREAD_EXIT = "thread_exit"
+        THREAD_ENTER  = "thread_enter"
+        THREAD_EXIT   = "thread_exit"
+        THREAD        = "thread"
 
     def __init__(self):
         self.date_time = ""
@@ -68,7 +69,8 @@ class LogSyntax:
         self.message = ""
         self.junk = ""
         self.thread_enter = ""
-        self.thread_exit = ""
+        self.thread_exit  = ""
+        self.thread       = ""
 
     def load_syntax(self, pathToSettings):
         """
@@ -97,6 +99,7 @@ class LogSyntax:
             self.junk = regex[self.Tags.JUNK]
             self.thread_enter = regex[self.Tags.THREAD_ENTER]
             self.thread_exit = regex[self.Tags.THREAD_EXIT]
+            self.thread = regex[self.Tags.THREAD]
 
 
 def get_selected_text(self):
@@ -196,19 +199,35 @@ class HideExtraPathCommand(sublime_plugin.TextCommand):
 
 
 class FilterByValueCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
+    """
+        Clipping all strings which contain selected text
+    """
+    def run(self, edit, ext_value):
+        """
+            Parameters
+            ----------
+            self : Sublime Window Class
+            edit : Sublime Edit Class
+            ext_value: indicates string for clipping and target window
+        """
         sel_text_regex = get_selected_text(self)
-        if sel_text_regex is not "":
+        if ext_value != "this_window":
+            sel_text_regex = ext_value
+        if sel_text_regex != "":
             trc_regions = self.view.find_all(sel_text_regex)
+            active_window = sublime.active_window()
             left_border = 0
-            for i in range(0, len(trc_regions)):
+            for i in range (0, len(trc_regions)):
                 trc_regions[i] = self.view.full_line(trc_regions[i])
                 trc_regions[i] = self.view.substr(trc_regions[i])
-            self.view.erase(edit, sublime.Region(0, self.view.size()))
-            left_border = 0
-            for cur_regions in trc_regions:
-                left_border += self.view.insert(edit,
-                                                left_border, cur_regions)
+
+            if ext_value != "this_window":
+                active_window.new_file()
+            else:   
+                self.view.erase(edit, sublime.Region(0, self.view.size()))
+            view = active_window.active_view()
+            for region in trc_regions:
+                left_border+= view.insert(edit, left_border, region)
 
 
 class JumpToFileCommand(sublime_plugin.TextCommand):
@@ -248,23 +267,29 @@ class FunctionTreeCommand(sublime_plugin.TextCommand):
     """
         Represents function tree
     """
-
     def run(self, edit):
-        FUNC_TREE_BEGIN = ".(cc|h):[0-9]{1,5} (.*)"
-        FUNC_TREE_END = "(.*)$"
-        sel_text_regex = get_selected_text(self)
-        hlText = []
-        if sel_text_regex:
-            trc_regions = self.view.find_all(
-                FUNC_TREE_BEGIN + sel_text_regex + FUNC_TREE_END)
-            for i in range(0, len(trc_regions)):
-                hlText.append(sublime.Region(trc_regions[i].a+8, 0))
-                trc_regions[i] = self.view.substr(trc_regions[i])
-                trc_regions[i] = trc_regions[i][trc_regions[i].find(" ")+1:]
-                hlText[i].b = hlText[i].a + len(trc_regions[i])
-                if trc_regions[i].find(" Exit") is not -1:
-                    break
-        self.view.add_regions('func_tree', hlText, 'param.func_tree.SDL_Logs')
+        pos = 0
+        deep_counter = 1
+        sel_text_regex = self.view.sel()[0]
+        if sel_text_regex.size() != 0:
+            sel_text_regex = self.view.full_line(sel_text_regex)
+            sel_text_regex = self.view.find(syntax.thread[2:-1], sel_text_regex.begin())
+            sel_text_regex = self.view.substr(sel_text_regex)
+            self.view.run_command('filter_by_value', {'ext_value': sel_text_regex})
+            active_window = sublime.active_window()
+            view = active_window.active_view()
+            region = view.find(sel_text_regex, pos)
+            while region != sublime.Region(-1,-1):
+                region = view.full_line(region)
+                trc_string = view.substr(region)
+                for i in range (0,deep_counter):
+                    view.insert(edit, region.begin(), "     ")
+                pos = region.end()+deep_counter*5
+                if trc_string.find(syntax.thread_enter) != -1:
+                    deep_counter+=1
+                elif trc_string.find(syntax.thread_exit) != -1:
+                    deep_counter-=1  
+                region = view.find(sel_text_regex, pos)
 
 
 syntax = LogSyntax()
