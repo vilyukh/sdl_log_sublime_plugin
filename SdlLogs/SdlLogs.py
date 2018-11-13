@@ -224,14 +224,13 @@ class FilterByValueCommand(sublime_plugin.TextCommand):
             sel_text_regex = ext_value
         if sel_text_regex != "":
             trc_regions = self.view.find_all(sel_text_regex)
-            cut_region = sublime.Region(0, 0)
             active_window = sublime.active_window()
             left_border = 0
             for i in range (0, len(trc_regions)):
                 trc_regions[i] = self.view.full_line(trc_regions[i])
                 trc_regions[i] = self.view.substr(trc_regions[i])
 
-            if ext_value == True:
+            if ext_value != False:
                 active_window.new_file()
             else:   
                 self.view.erase(edit, sublime.Region(0, self.view.size()))
@@ -337,7 +336,7 @@ class TextInsertCommand(sublime_plugin.TextCommand):
         """
         end_pos: position for insert
         """
-        self.view.insert(edit, end_pos, syntax.border_string+syntax.msg_string+syntax.border_string)
+        self.view.insert(edit, end_pos, syntax.border_string+"\n"+syntax.msg_string+"\n"+syntax.border_string+"\n")
 
 
 syntax = LogSyntax()
