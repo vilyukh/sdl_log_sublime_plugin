@@ -7,15 +7,18 @@ file_extensions:
   - logfile
 scope: text.SDL_Logs
 variables:
-  date_time: '\[\d{1,2} \w{1,3} \d{1,} \d{1,2}:\d{1,2}:\d{1,2},\d{1,}\]'
-  id: '\[0x[a-fA-F0-9]+\]'
-  component: '\[[A-z]+\]'
-  path: ' \/?[\w|\/]*\.(cc|cpp|h|hpp)'
-  line: ':\d* *'
-  message: '.*'
-  junk: ' /(.*)/sdl_core/src/'
-  thread_enter: '.(cc|h):[0-9]{1,5} (.*): Enter'
-  thread_exit: ' Exit'
+  date_time:     '\[\d{1,2} \w{1,3} \d{1,} \d{1,2}:\d{1,2}:\d{1,2},\d{1,}\]'
+  id:            '\[0x[a-fA-F0-9]+\]'
+  component:     '\[[A-z]+\]'
+  path:          ' \/?[\w|\/]*\.(cc|cpp|h|hpp)'
+  line:          ':\d* *'
+  message:       '.*'
+  junk:          ' /(.*)/sdl_core/src/'
+  thread_enter:  '.(cc|h):[0-9]{1,5} (.*): Enter'
+  thread_exit:   ' Exit'
+  app_mark:      'Application started!'
+  border_string: '=================================================================================================================================================='
+  msg_string:    '=                                                         NEW IGNITION CYCLE                                                                     ='
 
 contexts:
   main:
