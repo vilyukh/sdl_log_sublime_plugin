@@ -3,7 +3,7 @@
     { "keys": [ "alt+2" ], "command": "hide_thread_address" },
     { "keys": [ "alt+3" ], "command": "hide_extra_path" },
     { "keys": [ "alt+4" ], "command": "hide_component" },
-    { "keys": [ "alt+5" ], "command": "filter_by_value" },
+    { "keys": [ "alt+5" ], "command": "filter_by_value", "args": {"ext_value": "this_window"} },
     { "keys": [ "alt+6" ], "command": "function_call" },
     { "keys": [ "alt+7" ], "command": "function_tree" },
     { "keys": [ "f12" ], "command": "jump_to_file" }

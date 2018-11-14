@@ -14,8 +14,9 @@ variables:
   line: ':\d* *'
   message: '.*'
   junk: ' /(.*)/sdl_core/src/'
-  thread_enter: '.(cc|h):[0-9]{1,5} (.*): Enter'
-  thread_exit: ' Exit'
+  thread_enter:  ' Enter'
+  thread_exit:   ' Exit'
+  thread:        '\[0x[a-zA-Z0-9]{3,12}]'
   key_value_command: '("keys")\s*:\s*\[( *"[\x21-\x7E]+" *,? *)+\],\s*"command"\s*:\s*"([\w|_]+)"'
   key_map: '(Default)( *\(Linux\))?\.sublime-keymap'
 contexts:
