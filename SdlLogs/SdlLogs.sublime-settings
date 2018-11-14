@@ -5,6 +5,7 @@
         "log",
         "logfile"
     ],
-    "source_path": ""
+    "source_path": "",
+    "check_keys_override": true
 }
 
