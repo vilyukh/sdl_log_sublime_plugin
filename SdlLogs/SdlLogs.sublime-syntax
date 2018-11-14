@@ -16,10 +16,11 @@ variables:
   junk: ' /(.*)/sdl_core/src/'
   thread_enter: '.(cc|h):[0-9]{1,5} (.*): Enter'
   thread_exit: ' Exit'
-
+  key_value_command: '("keys")\s*:\s*\[( *"[\x21-\x7E]+" *,? *)+\],\s*"command"\s*:\s*"([\w|_]+)"'
+  key_map: '(Default)( *\(Linux\))?\.sublime-keymap'
 contexts:
   main:
-    - match: '^(TRACE *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(TRACE *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: trace.SDL_Logs
@@ -30,7 +31,7 @@ contexts:
         6: param.ext.SDL_Logs
         7: param.line.SDL_Logs
         8: trace.message.SDL_Logs
-    - match: '^(INFO *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(INFO *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: info.SDL_Logs
@@ -41,7 +42,7 @@ contexts:
         6: param.ext.SDL_Logs
         7: param.line.SDL_Logs
         8: info.message.SDL_Logs
-    - match: '^(DEBUG *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(DEBUG *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: debug.SDL_Logs
@@ -52,7 +53,7 @@ contexts:
         6: param.ext.SDL_Logs
         7: param.line.SDL_Logs
         8: debug.message.SDL_Logs
-    - match: '^(WARN *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(WARN *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: warn.SDL_Logs
@@ -63,7 +64,7 @@ contexts:
         6: param.ext.SDL_Logs
         7: param.line.SDL_Logs
         8: warn.message.SDL_Logs
-    - match: '^(ERROR *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(ERROR *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: error.SDL_Logs
@@ -74,7 +75,7 @@ contexts:
         6: param.ext.SDL_Logs
         7: param.line.SDL_Logs
         8: error.message.SDL_Logs
-    - match: '^(FATAL *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
+    - match: '(FATAL *)({{date_time}})*({{id}})*({{component}})*({{path}})*({{line}})({{message}})$'
       scope: string.quoted.SDL_Logs
       captures:
         1: fatal.SDL_Logs
